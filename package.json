@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
+    "prestart":"node buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel security-check start-svc",
+    "start-svc":"node buildScripts/srcServer.js",
+    "security-check":"nsp check",
+    "share":"lt --port 8090"
   },
   "author": "Harish S",
   "license": "Apache 2.0",
