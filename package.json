@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
-    "prestart":"babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check start-svc",
-    "start-svc":"babel-node buildScripts/srcServer.js",
-    "security-check":"nsp check",
-    "share":"lt --port 8090"
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel security-check start-svc lint:watch",
+    "start-svc": "babel-node buildScripts/srcServer.js",
+    "security-check": "nsp check",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch",
+    "share": "lt --port 8090"
   },
   "author": "Harish S",
   "license": "Apache 2.0",
   "dependencies": {
+    "eslint": "^4.13.1",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
@@ -26,7 +29,6 @@
     "compression": "1.6.2",
     "cross-env": "3.1.3",
     "css-loader": "0.25.0",
-    "eslint": "3.8.1",
     "eslint-plugin-import": "2.0.1",
     "eslint-watch": "2.1.14",
     "express": "4.14.0",

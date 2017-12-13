@@ -5,7 +5,7 @@ export default {
   devtools: 'inline-source-map',
   noInfo: false,
   entry:[
-    path.resolve(__dirname, 'src')
+    path.resolve(__dirname, 'src/index')
   ],
   target: 'node',
   output: {
